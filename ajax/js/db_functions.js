@@ -10,7 +10,7 @@ function saveToDb(editableObj,field,id,table)
 		data:"id="+id+"&value="+value+"&field="+field+"&table="+table,
 		success: function(data)
 		{
-			alert("success");
+			window.location.href="finances.php";
 		}
 	});
 }
