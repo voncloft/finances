@@ -16,15 +16,17 @@ function saveToDb(editableObj,field,id,table)
 }
 $(document).ready(function() {
 	$('.deleteIt').change(function() {
-		var id = $(this).val();
-		alert(id);
+		var value = $(this).val();
+		var myArray=value.split("-");
+		var id=myArray[0];
+		var table=myArray[1];
 		$.ajax({
 			type: "POST",
 			url: '../ajax/delete.php',
-			data:"id="+id,
+			data:"id="+id+"&table="+table,
 			success: function(data)
 			{
-				alert("record deleted");
+				window.location.href="finances.php";
 			}
 		});
 	});
