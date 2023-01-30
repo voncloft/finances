@@ -10,8 +10,23 @@ function saveToDb(editableObj,field,id,table)
 		data:"id="+id+"&value="+value+"&field="+field+"&table="+table,
 		success: function(data)
 		{
-			//alert("success");
+			alert("success");
 		}
 	});
 }
+$(document).ready(function() {
+	$('.deleteIt').change(function() {
+		var id = $(this).val();
+		alert(id);
+		$.ajax({
+			type: "POST",
+			url: '../ajax/delete.php',
+			data:"id="+id,
+			success: function(data)
+			{
+				alert("record deleted");
+			}
+		});
+	});
+});
 </script>

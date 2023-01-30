@@ -45,7 +45,7 @@ CREATE TABLE `current_month` (
 
 LOCK TABLES `current_month` WRITE;
 /*!40000 ALTER TABLE `current_month` DISABLE KEYS */;
-INSERT INTO `current_month` VALUES (1,'2023-02-01','Weeee',42.12),(2,'2023-02-02','Rent',760);
+INSERT INTO `current_month` VALUES (1,'0022-02-01','Wee',42.12),(2,'2023-02-02','Rent',760);
 /*!40000 ALTER TABLE `current_month` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -58,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-30 11:24:27
+-- Dump completed on 2023-01-30 12:23:37
