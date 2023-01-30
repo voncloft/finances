@@ -1,2 +1,2 @@
-This month:<br>
-<a href='php/finances.php'>Overall month</a><br>
+Actions:<br>
+<a href='php/finances.php'>Summary of this month</a><br>
