@@ -5,7 +5,7 @@
 function saveToDb(editableObj,field,id,table)
 {
 	var value=$(editableObj).val();
-	//alert(value);
+	alert(value);
 	$.ajax({
 		type: "POST",
 		url: '../ajax/edit_finances.php',

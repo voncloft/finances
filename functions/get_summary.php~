@@ -3,7 +3,6 @@
 	function get_summary($table)
 	{
 		//echo "<table><tr><td>";
-		echo "<center>";
 		global $conn;
 		$sql="select * from ".$table." order by position_order";
 		$result=$conn->query($sql);

@@ -1,6 +1,3 @@
-<?php
-	include_once '../include/style.php';
-?>
 <body>
 <?php
 	include_once '../include/passwords.php';
