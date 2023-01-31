@@ -1,6 +1,7 @@
 <?php
 	include_once '../include/passwords.php';
 	include_once '../functions/get_user_interface.php';
-	get_user_interface("get_tables","");
+	get_user_interface("summary",$_GET['table']);
+	//echo $_GET['table'];
 ?>
-<center><a href='../index.php'>Home</a>
+<a href=../index.php>Home</a>

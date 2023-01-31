@@ -2,12 +2,12 @@
 	include_once '../include/passwords.php';
 	include_once '../functions/get_summary.php';
 	include_once '../functions/get_tables.php';
-	function get_user_interface($option)
+	function get_user_interface($option,$table)
 	{
 		switch($option)
 		{
 			case "summary";
-				get_summary("current_month");
+				get_summary($table);
 			break;
 			case "create_table";
 				header("location: ../php/table_creation.php");

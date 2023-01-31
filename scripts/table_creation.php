@@ -13,3 +13,4 @@
   	echo $sql;
 	$conn->query($sql);
 ?>
+<a href=../index.php>Home</a>

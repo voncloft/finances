@@ -51,6 +51,59 @@ INSERT INTO `current_month` VALUES (5,'2023-02-02','Rent',-760,3),(6,'2023-02-24
 UNLOCK TABLES;
 
 --
+-- Table structure for table `default_table`
+--
+
+DROP TABLE IF EXISTS `default_table`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `default_table` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `day_of_month` date DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `amount` double DEFAULT NULL,
+  `position_order` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `default_table`
+--
+
+LOCK TABLES `default_table` WRITE;
+/*!40000 ALTER TABLE `default_table` DISABLE KEYS */;
+INSERT INTO `default_table` VALUES (1,'2024-02-02','Test',200,1);
+/*!40000 ALTER TABLE `default_table` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `default_table_test`
+--
+
+DROP TABLE IF EXISTS `default_table_test`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `default_table_test` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `day_of_month` date DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `amount` double DEFAULT NULL,
+  `position_order` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `default_table_test`
+--
+
+LOCK TABLES `default_table_test` WRITE;
+/*!40000 ALTER TABLE `default_table_test` DISABLE KEYS */;
+/*!40000 ALTER TABLE `default_table_test` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `test`
 --
 
@@ -64,7 +117,7 @@ CREATE TABLE `test` (
   `amount` double DEFAULT NULL,
   `position_order` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -73,6 +126,7 @@ CREATE TABLE `test` (
 
 LOCK TABLES `test` WRITE;
 /*!40000 ALTER TABLE `test` DISABLE KEYS */;
+INSERT INTO `test` VALUES (1,'2022-02-02','test',112,1);
 /*!40000 ALTER TABLE `test` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -85,4 +139,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-31 12:08:38
+-- Dump completed on 2023-01-31 13:31:34
