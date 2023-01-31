@@ -3,6 +3,7 @@
 	function get_summary($table)
 	{
 		//echo "<table><tr><td>";
+		echo "<center>";
 		global $conn;
 		$sql="select * from ".$table." order by position_order";
 		$result=$conn->query($sql);
@@ -18,7 +19,7 @@
 		//foreach($rows as $financial_transaction)
 		while($financial_transaction = $result->fetch_assoc())
 		{
-			echo '<tr id='.$financial_transaction['id'].'><td align="center"><input type=\'checkbox\' class=\'deleteIt\' id=\'deleteIt\' name=\'deleteIt\' value=\''.$financial_transaction['id']."-".$table.'\'></td>';
+			echo '<tr table='.$table.' id='.$financial_transaction['id'].'><td align="center"><input type=\'checkbox\' class=\'deleteIt\' id=\'deleteIt\' name=\'deleteIt\' value=\''.$financial_transaction['id']."-".$table.'\'></td>';
 			echo '<td><input type="text" size="9" class="date_box" onBlur="saveToDb(this,\'day_of_month\','.$financial_transaction['id'].',\''.$table.'\')" value="'.$financial_transaction['day_of_month'].'"></td>';
 			echo '<td><input type="text" size="20" class="date_box" onBlur="saveToDb(this,\'description\','.$financial_transaction['id'].',\''.$table.'\')" value="'.$financial_transaction['description'].'"></td>';
 			echo '<td><input type="text" size="5" class="date_box" onBlur="saveToDb(this,\'amount\','.$financial_transaction['id'].',\''.$table.'\')" value="'.$financial_transaction['amount'].'"></td></tr>';

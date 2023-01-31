@@ -39,18 +39,22 @@ $(".row_position").sortable({
 	delay: 150,
 	stop: function() {
 		var selectedData = new Array();
+		var table;
 		$('.row_position>tr').each(function() {
 			selectedData.push($(this).attr("id"));
+			//selectedData.push($(this).attr("table"));
+			table=$(this).attr("table_name");
 		});
-		updateOrder(selectedData);
+		updateOrder(selectedData,table);
+		//alert(selectedData);
 		}
 });
 });
-function updateOrder(data) {
+function updateOrder(data,current_month) {
 $.ajax({
 	url:"../ajax/ajaxPro.php",
 	type:'post',
-	data:{position:data},
+	data:{position:data, table_name:current_month},
 		success:function(data){
 			toastr.success('Your Change Successfully Saved.');
 			//alert(data);
