@@ -57,7 +57,7 @@ $.ajax({
 	data:{position:data, table_name:current_month},
 		success:function(data){
 			//toastr.success('Your Change Successfully Saved.');
-			alert(data);
+			alert(current_month);
 	}
 })
 }

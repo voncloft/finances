@@ -1,9 +1,10 @@
 <?php
 	include_once '../include/passwords.php';
-	function get_summary($table)
-	{
+function get_summary($table)
+{
 		//echo "<table><tr><td>";
 		echo "<center>";
+		echo "<input type='hidden' id='txt_table' value='".$table."'>";
 		global $conn;
 		$sql="select * from ".$table." order by position_order";
 		$result=$conn->query($sql);
@@ -15,7 +16,7 @@
 		<h3 class="text-center title">Financial Ledger</h3>
 <?php		
 		echo "<table border='2' class='table table-bordered'><caption><center>This Month</center></caption><tr><th align='center'>Delete record</th><th><center>Date</center></th><th><center>Description</center></th><th><center>Amount</center></th></tr>";
-		echo "<tbody class='row_position'>";
+		echo "<tbody id='table-body' class='row_position'>";
 		//foreach($rows as $financial_transaction)
 		while($financial_transaction = $result->fetch_assoc())
 		{
@@ -25,13 +26,16 @@
 			echo '<td><input type="text" size="5" class="date_box" onBlur="saveToDb(this,\'amount\','.$financial_transaction['id'].',\''.$table.'\')" value="'.$financial_transaction['amount'].'"></td></tr>';
 		}
 ?>
+
 </tbody>
 </table>
 </div>
 </div>
 </div>
+<div id="add-more" onClick="createNew();">Add More</div>
 <?php
 		//echo "</td></tr><tr><td align='center'><a href='../index.php'>Home</a></td></tr></table>";
-	}
-	include '../ajax/js/db_functions.js';
+
+}
+include '../ajax/js/db_functions.js';
 ?>

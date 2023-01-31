@@ -57,8 +57,45 @@ $.ajax({
 	data:{position:data, table_name:current_month},
 		success:function(data){
 			toastr.success('Your Change Successfully Saved.');
-			//alert(data);
+			//alert(current_month);
 	}
 })
 }
+function createNew(){
+	$("#add-more").hide();
+	var data='<tr id="new_row_ajax">'+
+	'<td>N/A</td>'+
+	'<td><input type="text" id="txt_date" onBlur="addToHiddenField(this,\'date\');"></td>'+
+	'<td><input type="text" id="txt_desc" onBlur="addToHiddenField(this,\'description\');"></td>'+
+	'<td><input type="text" id="txt_amount" onBlur="addToHiddenField(this,\'amount\');"></td>'+
+	'<td><span id="confirmAdd"><button onclick="addToDb();">Save</a>/<button onclick="cancelAdd();">Cancel</a></span></td>'+
+	'</tr>';
+	$("#table-body").append(data);
+}
+function cancelAdd(){
+	//alert("weee");
+	$("#add-more").show();
+	$("#new_row_ajax").remove();
+}
+function addToDb()
+{
+	var date=$("#txt_date").val();
+	var description=$("#txt_desc").val();
+	var amount=$("#txt_amount").val();
+	var txt_table=$("#txt_table").val();
+	//alert(txt_table);
+	$.ajax({
+		url: "../ajax/add.php",
+		type: "post",
+		data:'date='+date+'&description='+description+'&amount='+amount+'&table='+txt_table,
+		success: function(data){
+			//alert(data);
+			$("new_row_ajax").remove();
+			$("add-more").show();
+			$("table-body").append(data);
+			window.location.reload();
+		}
+	});
+}
 </script>
+
