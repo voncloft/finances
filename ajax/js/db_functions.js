@@ -83,11 +83,12 @@ function addToDb()
 	var description=$("#txt_desc").val();
 	var amount=$("#txt_amount").val();
 	var txt_table=$("#txt_table").val();
+	var txt_count=$("#txt_count").val();
 	//alert(txt_table);
 	$.ajax({
 		url: "../ajax/add.php",
 		type: "post",
-		data:'date='+date+'&description='+description+'&amount='+amount+'&table='+txt_table,
+		data:'date='+date+'&description='+description+'&amount='+amount+'&table='+txt_table+"&count="+txt_count,
 		success: function(data){
 			//alert(data);
 			$("new_row_ajax").remove();

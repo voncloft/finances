@@ -17,6 +17,7 @@ function get_summary($table)
 <?php		
 		echo "<table border='2' class='table table-bordered'><caption><center>This Month</center></caption><tr><th align='center'>Delete record</th><th><center>Date</center></th><th><center>Description</center></th><th><center>Amount</center></th></tr>";
 		echo "<tbody id='table-body' class='row_position'>";
+		$counter=0;
 		//foreach($rows as $financial_transaction)
 		while($financial_transaction = $result->fetch_assoc())
 		{
@@ -24,9 +25,10 @@ function get_summary($table)
 			echo '<td><input type="text" size="9" class="date_box" onBlur="saveToDb(this,\'day_of_month\','.$financial_transaction['id'].',\''.$table.'\')" value="'.$financial_transaction['day_of_month'].'"></td>';
 			echo '<td><input type="text" size="20" class="date_box" onBlur="saveToDb(this,\'description\','.$financial_transaction['id'].',\''.$table.'\')" value="'.$financial_transaction['description'].'"></td>';
 			echo '<td><input type="text" size="5" class="date_box" onBlur="saveToDb(this,\'amount\','.$financial_transaction['id'].',\''.$table.'\')" value="'.$financial_transaction['amount'].'"></td></tr>';
+			$counter++;
 		}
 ?>
-
+<input type="hidden" id="txt_count" value=<?php echo $counter ?>
 </tbody>
 </table>
 </div>

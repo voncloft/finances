@@ -37,7 +37,7 @@ CREATE TABLE `current_month` (
   `amount` double DEFAULT NULL,
   `position_order` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,7 +46,7 @@ CREATE TABLE `current_month` (
 
 LOCK TABLES `current_month` WRITE;
 /*!40000 ALTER TABLE `current_month` DISABLE KEYS */;
-INSERT INTO `current_month` VALUES (5,'2023-02-02','Rent',-760,3),(6,'2023-02-24','Phone',-80,8),(9,'2023-02-26','Internet',-50,9),(12,'2023-02-28','Progressive',-60,11),(13,'2023-02-02','Payday',980,2),(14,'2023-02-27','AEP',-155,10),(16,'2024-01-31','Grocery',-70,1),(17,'2024-02-08','Grocery',-70,4),(18,'2024-02-15','Grocery',-70,5),(19,'2024-02-22','Grocery',-70,7),(20,'2023-02-16','Payday',980,6);
+INSERT INTO `current_month` VALUES (5,'2023-02-02','Rent',-760,3),(6,'2023-02-24','Phone',-80,8),(9,'2023-02-26','Internet',-50,9),(12,'2023-02-28','Progressive',-60,12),(13,'2023-02-02','Payday',980,2),(14,'2023-02-27','AEP',-155,11),(16,'2024-01-31','Grocery',-70,1),(17,'2024-02-08','Grocery',-70,4),(18,'2024-02-15','Grocery',-70,5),(19,'2024-02-22','Grocery',-70,7),(20,'2023-02-16','Payday',980,6);
 /*!40000 ALTER TABLE `current_month` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -59,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-31 10:16:41
+-- Dump completed on 2023-01-31 11:24:38
