@@ -67,28 +67,34 @@ $.ajax({
 	}
 })
 }
-function createNew(){
+function createNew(table)
+{
+	//var value=$('#txt_table').val();
+	//alert(table);
 	$("#add-more").hide();
 	var data='<tr id="new_row_ajax">'+
 	'<td>N/A</td>'+
 	'<td><input type="text" id="txt_date" onBlur="addToHiddenField(this,\'date\');"></td>'+
 	'<td><input type="text" id="txt_desc" onBlur="addToHiddenField(this,\'description\');"></td>'+
 	'<td><input type="text" id="txt_amount" onBlur="addToHiddenField(this,\'amount\');"></td>'+
-	'<td><span id="confirmAdd"><button onclick="addToDb();">Save</a>/<button onclick="cancelAdd();">Cancel</a></span></td>'+
+	'<td><span id="confirmAdd"><button onclick="addToDb(\''+table+'\');">Save</a>/<button onclick="cancelAdd();">Cancel</a></span></td>'+
 	'</tr>';
-	$("#table-body").append(data);
+	//alert(data);
+	$("#table-body-"+table).append(data);
 }
 function cancelAdd(){
 	//alert("weee");
 	$("#add-more").show();
 	$("#new_row_ajax").remove();
 }
-function addToDb()
+function addToDb(table)
 {
+	//alert(table);
 	var date=$("#txt_date").val();
 	var description=$("#txt_desc").val();
 	var amount=$("#txt_amount").val();
-	var txt_table=$("#txt_table").val();
+	//var txt_table=$("#txt_table").val();
+	var txt_table=table;
 	var txt_count=$("#txt_count").val();
 	//alert(txt_table);
 	$.ajax({

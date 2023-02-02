@@ -5,7 +5,7 @@ function get_summary($table,$month_only)
 {
 		date_default_timezone_set('America/Indianapolis');
 		echo "<center>";
-		echo "<input type='hidden' id='txt_table' value='".$table."'>";
+		echo "<input type='hidden' id='txt_table' class='txt_table' value='".$table."'>";
 		global $conn;
 		$date=new DateTime();
 		$date->modify("last day of this month");
@@ -33,7 +33,7 @@ function get_summary($table,$month_only)
 		<h3 class="text-center title">Financial Ledger</h3>
 <?php		
 		echo "<table border='2' class='table table-bordered'><caption><center>This Month</center></caption><tr><th align='center'>Delete record</th><th><center>Date</center></th><th><center>Description</center></th><th><center>Amount</center></th><th><center>Current Funds</center></td></tr>";
-		echo "<tbody id='table-body' class='row_position'>";
+		echo "<tbody id='table-body-".$table."' class='row_position'>";
 		$counter=0;
 		$amount=0;
 		$total_amount=0;
@@ -57,7 +57,7 @@ function get_summary($table,$month_only)
 </div>
 </div>
 </div>
-<div id="add-more" onClick="createNew();">Add More</div>
+<div id="add-more" onClick="createNew('<?php echo $table ?>');">Add More</div>
 <?php
 		//echo "</td></tr><tr><td align='center'><a href='../index.php'>Home</a></td></tr></table>";
 
