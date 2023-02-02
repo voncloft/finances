@@ -73,7 +73,7 @@ CREATE TABLE `Savings` (
 
 LOCK TABLES `Savings` WRITE;
 /*!40000 ALTER TABLE `Savings` DISABLE KEYS */;
-INSERT INTO `Savings` VALUES (1,'2023-02-02','Starting Amount',1879.8,1);
+INSERT INTO `Savings` VALUES (1,'2023-02-02','Starting Amount',1879.8,14);
 /*!40000 ALTER TABLE `Savings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -91,7 +91,7 @@ CREATE TABLE `current_month` (
   `amount` double DEFAULT NULL,
   `position_order` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -100,7 +100,7 @@ CREATE TABLE `current_month` (
 
 LOCK TABLES `current_month` WRITE;
 /*!40000 ALTER TABLE `current_month` DISABLE KEYS */;
-INSERT INTO `current_month` VALUES (5,'2023-02-02','Rent',-760,5),(6,'2023-02-08','Phone',-46,6),(9,'2023-02-26','Internet',-50,15),(12,'2023-02-28','Progressive',-60,17),(14,'2023-02-27','AEP',-155,16),(17,'2024-02-08','Grocery',-101,7),(18,'2024-02-15','Grocery',-70,11),(19,'2024-02-22','Grocery',-70,13),(20,'2023-02-15','Payday',1000,10),(23,'2023-02-02','Headlights',-50,3),(24,'2023-03-01','Payday',1000,19),(25,'2023-03-02','Rent',-760,22),(26,'2023-03-01','Grocery',-100,20),(27,'2023-03-08','Phone',-46,23),(28,'2023-03-08','Grocery',-100,24),(29,'2023-03-15','Grocery',-100,27),(30,'2023-03-15','Payday',1000,28),(31,'2023-03-22','Grocery',-100,30),(32,'2023-03-26','Internet',-50,32),(33,'2023-03-27','AEP',-155,33),(34,'2023-03-28','Progressive',-60,34),(35,'2023-02-08','Savings',-25,8),(36,'2023-02-15','Savings',-25,12),(37,'2023-02-22','Savings',-25,14),(38,'2023-03-01','Savings',-25,21),(39,'2023-03-08','Savings',-25,25),(40,'2023-03-15','Savings',-25,29),(41,'2023-03-22','Savings',-25,31),(42,'2023-03-29','Savings',-25,35),(43,'2023-02-09','Credit Card',-50,9),(44,'2023-03-09','Credit Card',-50,26),(45,'2023-02-28','LINE BREAK',0,18),(46,'2023-02-22','Starting Out',1019,1);
+INSERT INTO `current_month` VALUES (5,'2023-02-02','Rent',-760,4),(6,'2023-02-08','Phone',-46,5),(9,'2023-02-26','Internet',-50,11),(12,'2023-02-28','Progressive',-60,13),(14,'2023-02-27','AEP',-155,12),(17,'2024-02-08','Grocery',-80,6),(18,'2024-02-15','Grocery',-70,10),(19,'2024-02-22','Grocery',-70,12),(20,'2023-02-15','Payday',1000,8),(23,'2023-02-02','Headlights',-50,2),(24,'2023-03-01','Payday',1000,17),(25,'2023-03-02','Rent',-760,20),(26,'2023-03-01','Grocery',-80,18),(27,'2023-03-08','Phone',-46,21),(28,'2023-03-08','Grocery',-80,22),(29,'2023-03-15','Grocery',-80,25),(30,'2023-03-15','Payday',1000,26),(31,'2023-03-22','Grocery',-80,28),(32,'2023-03-26','Internet',-50,30),(33,'2023-03-27','AEP',-155,31),(34,'2023-03-28','Progressive',-60,32),(35,'2023-02-08','Savings',-25,6),(36,'2023-02-15','Savings',-25,9),(37,'2023-02-22','Savings',-25,10),(38,'2023-03-01','Savings',-25,19),(39,'2023-03-08','Savings',-25,23),(40,'2023-03-15','Savings',-25,27),(41,'2023-03-22','Savings',-25,29),(42,'2023-03-29','Savings',-25,33),(43,'2023-02-09','Credit Card',-50,7),(44,'2023-03-09','Credit Card',-50,24),(51,'2023-02-02','Pop',-25,3),(52,'2023-02-02','Starting Out',1069,1);
 /*!40000 ALTER TABLE `current_month` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -140,4 +140,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-02-02  9:03:15
+-- Dump completed on 2023-02-02 11:48:01

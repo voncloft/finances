@@ -1,12 +1,29 @@
 <?php
+error_reporting(0);
 	include_once '../include/passwords.php';
-function get_summary($table)
+function get_summary($table,$month_only)
 {
-		//echo "<table><tr><td>";
+		date_default_timezone_set('America/Indianapolis');
 		echo "<center>";
 		echo "<input type='hidden' id='txt_table' value='".$table."'>";
 		global $conn;
-		$sql="select * from ".$table." order by position_order";
+		$date=new DateTime();
+		$date->modify("last day of this month");
+		$last_day=$date->format("Y-m-d");
+		$dates=new DateTime();
+		$dates->modify("first day of the month");
+		$first_day=$dates->format("Y-m-d");
+		//echo $first_day.$last_day;
+		switch($month_only)
+		{
+			case "this_month_only";
+				$sql="select * from ".$table." where (day_of_month between '".$first_day."' and '".$last_day."') order by position_order";
+			break;
+			default:
+				$sql="select * from ".$table." order by position_order";
+			break;
+		}
+		//echo $sql;
 		$result=$conn->query($sql);
 		//$rows=$result->fetch_all(MYSQLI_ASSOC);
 ?>
