@@ -24,6 +24,60 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/ `finances` /*!40100 DEFAULT CHARACTER S
 USE `finances`;
 
 --
+-- Table structure for table `Credit_Card`
+--
+
+DROP TABLE IF EXISTS `Credit_Card`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Credit_Card` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `day_of_month` date DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `amount` double DEFAULT NULL,
+  `position_order` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Credit_Card`
+--
+
+LOCK TABLES `Credit_Card` WRITE;
+/*!40000 ALTER TABLE `Credit_Card` DISABLE KEYS */;
+INSERT INTO `Credit_Card` VALUES (1,'2023-02-02','Starting Balance',-583.44,1);
+/*!40000 ALTER TABLE `Credit_Card` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Savings`
+--
+
+DROP TABLE IF EXISTS `Savings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Savings` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `day_of_month` date DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `amount` double DEFAULT NULL,
+  `position_order` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Savings`
+--
+
+LOCK TABLES `Savings` WRITE;
+/*!40000 ALTER TABLE `Savings` DISABLE KEYS */;
+INSERT INTO `Savings` VALUES (1,'2023-02-02','Starting Amount',1879.8,1);
+/*!40000 ALTER TABLE `Savings` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `current_month`
 --
 
@@ -37,7 +91,7 @@ CREATE TABLE `current_month` (
   `amount` double DEFAULT NULL,
   `position_order` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,7 +100,7 @@ CREATE TABLE `current_month` (
 
 LOCK TABLES `current_month` WRITE;
 /*!40000 ALTER TABLE `current_month` DISABLE KEYS */;
-INSERT INTO `current_month` VALUES (5,'2023-02-02','Rent',-760,3),(6,'2023-02-24','Phone',-80,8),(9,'2023-02-26','Internet',-50,9),(12,'2023-02-28','Progressive',-60,12),(13,'2023-02-02','Payday',0,2),(14,'2023-02-27','AEP',-155,11),(16,'2024-01-31','Grocery',-70,1),(17,'2024-02-08','Grocery',-70,4),(18,'2024-02-15','Grocery',-70,5),(19,'2024-02-22','Grocery',-70,7),(20,'2023-02-16','Payday',0,6),(22,'2023-02-28','test',100,12);
+INSERT INTO `current_month` VALUES (5,'2023-02-02','Rent',-760,5),(6,'2023-02-08','Phone',-46,6),(9,'2023-02-26','Internet',-50,15),(12,'2023-02-28','Progressive',-60,17),(14,'2023-02-27','AEP',-155,16),(17,'2024-02-08','Grocery',-101,7),(18,'2024-02-15','Grocery',-70,11),(19,'2024-02-22','Grocery',-70,13),(20,'2023-02-15','Payday',1000,10),(23,'2023-02-02','Headlights',-50,3),(24,'2023-03-01','Payday',1000,19),(25,'2023-03-02','Rent',-760,22),(26,'2023-03-01','Grocery',-100,20),(27,'2023-03-08','Phone',-46,23),(28,'2023-03-08','Grocery',-100,24),(29,'2023-03-15','Grocery',-100,27),(30,'2023-03-15','Payday',1000,28),(31,'2023-03-22','Grocery',-100,30),(32,'2023-03-26','Internet',-50,32),(33,'2023-03-27','AEP',-155,33),(34,'2023-03-28','Progressive',-60,34),(35,'2023-02-08','Savings',-25,8),(36,'2023-02-15','Savings',-25,12),(37,'2023-02-22','Savings',-25,14),(38,'2023-03-01','Savings',-25,21),(39,'2023-03-08','Savings',-25,25),(40,'2023-03-15','Savings',-25,29),(41,'2023-03-22','Savings',-25,31),(42,'2023-03-29','Savings',-25,35),(43,'2023-02-09','Credit Card',-50,9),(44,'2023-03-09','Credit Card',-50,26),(45,'2023-02-28','LINE BREAK',0,18),(46,'2023-02-22','Starting Out',1019,1);
 /*!40000 ALTER TABLE `current_month` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -64,7 +118,7 @@ CREATE TABLE `default_table` (
   `amount` double DEFAULT NULL,
   `position_order` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -73,61 +127,8 @@ CREATE TABLE `default_table` (
 
 LOCK TABLES `default_table` WRITE;
 /*!40000 ALTER TABLE `default_table` DISABLE KEYS */;
-INSERT INTO `default_table` VALUES (1,'2024-02-02','Test',200,1);
+INSERT INTO `default_table` VALUES (1,'2023-02-01','Payday',1000,1),(2,'2023-02-02','Rent',-760,4),(3,'2023-02-08','Savings',-25,6),(4,'2023-02-02','Grocery',-80,3),(5,'2023-02-08','Phone',-45,7),(6,'2023-02-01','Savings',-25,2),(7,'2023-02-15','Savings',-25,10),(8,'2023-02-22','Savings',-25,12),(9,'2023-03-01','Savings',-25,17),(10,'2023-02-08','Credit Card',-50,5),(11,'2023-02-09','Grocery',-80,8),(12,'2023-02-16','Grocery',-80,11),(13,'2023-02-23','Grocery',-80,13),(14,'2023-03-01','Grocery',-80,16),(15,'2023-02-26','AEP',-155,14),(16,'2023-02-27','Progressive',-60,15),(17,'2023-02-15','Payday',1000,9);
 /*!40000 ALTER TABLE `default_table` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `default_table_test`
---
-
-DROP TABLE IF EXISTS `default_table_test`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `default_table_test` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `day_of_month` date DEFAULT NULL,
-  `description` text DEFAULT NULL,
-  `amount` double DEFAULT NULL,
-  `position_order` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `default_table_test`
---
-
-LOCK TABLES `default_table_test` WRITE;
-/*!40000 ALTER TABLE `default_table_test` DISABLE KEYS */;
-/*!40000 ALTER TABLE `default_table_test` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `test`
---
-
-DROP TABLE IF EXISTS `test`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `test` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `day_of_month` date DEFAULT NULL,
-  `description` text DEFAULT NULL,
-  `amount` double DEFAULT NULL,
-  `position_order` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `test`
---
-
-LOCK TABLES `test` WRITE;
-/*!40000 ALTER TABLE `test` DISABLE KEYS */;
-INSERT INTO `test` VALUES (1,'2022-02-02','test',112,1);
-/*!40000 ALTER TABLE `test` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -139,4 +140,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-31 13:40:08
+-- Dump completed on 2023-02-02  9:03:15

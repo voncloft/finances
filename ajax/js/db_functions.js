@@ -12,7 +12,8 @@ function saveToDb(editableObj,field,id,table)
 		data:"id="+id+"&value="+value+"&field="+field+"&table="+table,
 		success: function(data)
 		{
-			window.location.href="finances.php";
+			//window.location.href="http://voncloft.finances.com/php/finances.php";
+			window.location.reload();
 			//alert("weee");
 		}
 	});
@@ -29,7 +30,10 @@ $(document).ready(function() {
 			data:"id="+id+"&table="+table,
 			success: function(data)
 			{
-				window.location.href="finances.php";
+				//window.location.href="http://voncloft.finances.com/php/finances.php";
+				window.location.reload();
+				$(':checkbox:checked').prop('checked',false);
+
 			}
 		});
 	});
@@ -47,6 +51,7 @@ $(".row_position").sortable({
 		});
 		updateOrder(selectedData,table);
 		//alert(selectedData);
+		//window.location.reload();
 		}
 });
 });
@@ -58,6 +63,7 @@ $.ajax({
 		success:function(data){
 			toastr.success('Your Change Successfully Saved.');
 			//alert(current_month);
+			window.location.reload();
 	}
 })
 }
