@@ -32,7 +32,7 @@ function get_summary($table,$month_only)
 		<div class="col-md-8 col-md-offset-2 mian-section">
 		<h3 class="text-center title">Financial Ledger</h3>
 <?php		
-		echo "<table border='2' class='table table-bordered'><caption><center>This Month</center></caption><tr><th align='center'>Delete record</th><th><center>Date</center></th><th><center>Description</center></th><th><center>Amount</center></th><th><center>Current Funds</center></td></tr>";
+		echo "<table border='2' class='table table-bordered'><caption><center>".$table."</center></caption><tr><th align='center'>Delete record</th><th><center>Date</center></th><th><center>Description</center></th><th><center>Amount</center></th><th><center>Current Funds</center></td></tr>";
 		echo "<tbody id='table-body-".$table."' class='row_position'>";
 		$counter=0;
 		$amount=0;
