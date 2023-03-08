@@ -48,7 +48,7 @@ $(".row_position").sortable({
 			selectedData.push($(this).attr("id"));
 			//selectedData.push($(this).attr("table"));
 			table=$(this).attr("table_name");
-			alert(table);
+			//alert(table);
 		});
 		updateOrder(selectedData,table);
 		//alert(selectedData);
